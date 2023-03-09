@@ -1,4 +1,31 @@
 .p-toast.p-toast-top-right {
-    z-index: 1000;
-    top: 7rem;
+  z-index: 1000;
+  top: 7rem;
+}
+
+
+
+
+/*-------------Scroll Bar---------*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: 0;
+  border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f5f5f5;
+  border-radius: 10px;
+  color: #45C295;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #45C295;
 }

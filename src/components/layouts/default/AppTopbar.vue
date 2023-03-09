@@ -1,32 +1,32 @@
 <script lang="ts">
 export default {
-  emits: ['topbar-menu-toggle', 'menu-toggle'],
+  emits: ["topbar-menu-toggle", "menu-toggle"],
   computed: {
     darkTheme() {
       return this.$appState.darkTheme;
-    }
+    },
   },
   methods: {
     onMenuToggle(event) {
-      this.$emit('menu-toggle', event);
+      this.$emit("menu-toggle", event);
     },
     onTopbarMenuToggle(event) {
-      this.$emit('topbar-menu-toggle', event);
+      this.$emit("topbar-menu-toggle", event);
     },
-    topbarImage() {
-      return this.$appState.darkTheme ? '/images/logo-white.svg' : '/images/logo-dark.svg';
-    }
-  }
+  },
 };
 </script>
 
 <template>
   <div class="layout-topbar">
     <NuxtLink to="/" class="layout-topbar-logo">
-      <img alt="Logo" :src="topbarImage()">
-      <span>SAKAI</span>
+      <img alt="Logo" src="/images/agro.svg" />
+      <span style="color: #45c295">AgroSense</span>
     </NuxtLink>
-    <button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle">
+    <button
+      class="p-link layout-menu-button layout-topbar-button"
+      @click="onMenuToggle"
+    >
       <i class="pi pi-bars" />
     </button>
 
@@ -37,7 +37,7 @@ export default {
         enterActiveClass: 'scalein',
         leaveToClass: 'hidden',
         leaveActiveClass: 'fadeout',
-        hideOnOutsideClick: true
+        hideOnOutsideClick: true,
       }"
       class="p-link layout-topbar-menu-button layout-topbar-button"
     >
@@ -65,3 +65,9 @@ export default {
     </ul>
   </div>
 </template>
+<style scoped>
+.layout-topbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+</style>
